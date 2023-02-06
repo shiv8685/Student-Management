@@ -1,0 +1,44 @@
+﻿Create database StudentSystems
+go
+use StudentSystems
+go
+Create table Batch
+(
+BatchId int primary key identity,
+Batch varchar(50),
+Year varchar(50)
+)
+go
+Create  table Course
+(
+CourseId int primary key identity,
+Course varchar(50),
+Duration int
+)
+go
+Create table Registration
+(
+RegistrationId int primary key,
+FirstName varchar(50),
+LastName varchar(50),
+Nic varchar (50),
+CourseId int,
+BatchId int,
+Foreign Key(CourseId) references Course(CourseId),
+Foreign Key(BatchId) references Batch(BatchId),
+Mobile varchar(10)
+)
+go
+Create table Users
+(
+UserId int Primary key identity,
+FirstName varchar(50),
+LastName varchar(50),
+UserName varchar(50),
+Password varchar(50)
+)
+go
+select * from Batch
+select * from Course
+select * from Registration
+select * from Users
